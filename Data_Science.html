@@ -1,94 +1,113 @@
 <!DOCTYPE HTML>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-        
 		<title>Nkosinathi Dubazana - Data Analyst/Scientist</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-		 h1 { margin: 0 0 0.5rem 0; font-size: 2rem; }
-        .badge { background: #10b981; color: #064e3b; padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: bold; font-size: 0.85rem; }
-        .card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+			h1.project-title { margin: 0.5rem 0; font-size: 1.8rem; }
+			.badge { background: #10b981; color: #064e3b; padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: bold; font-size: 0.8rem; display: inline-block; }
+			.card { background: white; padding: 2rem; border: solid 1px rgba(160, 160, 160, 0.3); margin-bottom: 2rem; }
+			.highlight { font-weight: bold; color: #059669; }
+			.script-links a { margin-right: 1.2rem; font-weight: bold; }
 		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Nkosinathi Dubazana</a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="excel.html">Excel</a></li>
-								<li><a href="sql.html">SQL</a></li>
-								<li><a href="powerbi.html">PowerBI</a></li>
-								<li><a href="tableau.html">Tableau</a></li>
-								<li><a href="Data_Science.html">Data Science </a></li>
-								<li><a href="About Me.html">About Me</Menu></a></li>
-							</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
+			<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html">Nkosinathi Dubazana</a></h1>
+				<nav class="links">
+					<ul>
+						<li><a href="excel.html">Excel</a></li>
+						<li><a href="sql.html">SQL</a></li>
+						<li><a href="powerbi.html">PowerBI</a></li>
+						<li><a href="tableau.html">Tableau</a></li>
+						<li><a href="Data_Science.html">Data Science</a></li>
+						<li><a href="About Me.html">About Me</a></li>
+					</ul>
+				</nav>
+				<nav class="main">
+					<ul>
+						<li class="search">
+							<a class="fa-search" href="#search">Search</a>
+							<form id="search" method="get" action="#">
+								<input type="text" name="query" placeholder="Search" />
+							</form>
+						</li>
+						<li class="menu">
+							<a class="fa-bars" href="#menu">Menu</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Menu -->
+			<section id="menu">
+				<section>
+					<form class="search" method="get" action="#">
+						<input type="text" name="query" placeholder="Search" />
+					</form>
+				</section>
+			</section>
+
+			<!-- Main Content -->
+			<div id="main">
+				<article class="post">
+					<header>
+						<div class="title">
+							<span class="badge">End-to-End Machine Learning</span>
+							<h1 class="project-title">Outbound Call Center Lead Scoring Engine (ZAR)</h1>
+							<p>Predicting insurance &amp; investment sales conversion across 50,000+ South African VoIP &amp; CRM records using Scikit-Learn and FastAPI.</p>
+						</div>
 					</header>
 
-				<!-- Menu -->
-					<section id="menu">
+					<div class="card">
+						<h2>1. Business Problem &amp; Data Architecture</h2>
+						<p>Outbound call centers waste consultant hours dialing low-intent leads. I merged three fragmented data sources (50k records each)—<strong>VoIP Call Logs</strong>, <strong>ZAR Sales Ledger</strong>, and <strong>Customer Demographics</strong>—standardized mobile prefixes (<code>+27</code> vs <code>0</code>), and eliminated post-call data leakage.</p>
+					</div>
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+					<div class="card">
+						<h2>2. Model Comparison &amp; Tuning Results</h2>
+						<p>Evaluated four classification algorithms prioritizing <strong>Precision</strong> to ensure high-scoring leads actually convert:</p>
+						<table>
+							<thead>
+								<tr><th>Algorithm</th><th>Baseline Accuracy</th><th>Baseline Precision</th><th>Post-Tuning Precision</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>Logistic Regression</td><td>68.4%</td><td>65.1%</td><td>66.0%</td></tr>
+								<tr><td>K-Nearest Neighbors (KNN)</td><td>66.2%</td><td>62.8%</td><td>64.5%</td></tr>
+								<tr><td>Decision Tree</td><td>64.9%</td><td>61.2%</td><td>67.8%</td></tr>
+								<tr class="highlight"><td>Random Forest (Selected)</td><td>73.1%</td><td>71.4%</td><td>76.9%</td></tr>
+							</tbody>
+						</table>
+					</div>
 
-                    </section>
+					<div class="card">
+						<h2>3. Production Automation &amp; Source Code</h2>
+						<p>Deployed the winning Random Forest pipeline via a <strong>FastAPI REST endpoint</strong>. When an agent initiates a call, the system scores conversion probability in &lt;15ms and automatically schedules weekly retraining as new VoIP outcomes are logged.</p>
+						<p class="script-links">
+							<a href="call-center-ml/">View Full Project Folder &rarr;</a>
+							<a href="call-center-ml/generate_data.py">1. Data Generator (.py)</a>
+							<a href="call-center-ml/train_pipeline.py">2. ML Pipeline (.py)</a>
+							<a href="call-center-ml/app.py">3. FastAPI Automation (.py)</a>
+						</p>
+					</div>
+				</article>
+			</div>
 
-            </div>
-			
-				<p>
-				<span class="badge">End-to-End Machine Learning</span>
-				<h1>Outbound Call Center Lead Scoring Engine (ZAR)</h1>
-				<p>Predicting insurance & investment sales conversion across 50,000+ South African VoIP & CRM records using Scikit-Learn and FastAPI.</p>
-			</p>
-			
-			<div class="card">
-        <h2>1. Business Problem & Data Architecture</h2>
-        <p>Outbound call centers waste consultant hours dialing low-intent leads. I merged three fragmented data sources (50k records each)—<strong>VoIP Call Logs</strong>, <strong>ZAR Sales Ledger</strong>, and <strong>Customer Demographics</strong>—standardized mobile prefixes (<code>+27</code> vs <code>0</code>), and eliminated post-call data leakage.</p>
-    </div>
+		</div>
 
-    <div class="card">
-        <h2>2. Model Comparison & Tuning Results</h2>
-        <p>Evaluated four classification algorithms prioritizing <strong>Precision</strong> to ensure high-scoring leads actually convert:</p>
-        <table>
-            <tr><th>Algorithm</th><th>Baseline Accuracy</th><th>Baseline Precision</th><th>Post-Tuning Precision</th></tr>
-            <tr><td>Logistic Regression</td><td>68.4%</td><td>65.1%</td><td>66.0%</td></tr>
-            <tr><td>K-Nearest Neighbors (KNN)</td><td>66.2%</td><td>62.8%</td><td>64.5%</td></tr>
-            <tr><td>Decision Tree</td><td>64.9%</td><td>61.2%</td><td>67.8%</td></tr>
-            <tr class="highlight"><td>Random Forest (Selected)</td><td>73.1%</td><td>71.4%</td><td>76.9%</td></tr>
-        </table>
-    </div>
+		<!-- Scripts (Required for Future Imperfect menu/animations) -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-    <div class="card">
-        <h2>3. Production Automation & Retraining Loop</h2>
-        <p>Deployed the winning Random Forest pipeline via a <strong>FastAPI REST endpoint</strong>. When an agent initiates a call, the system scores conversion probability in &lt;15ms and automatically schedules weekly retraining as new VoIP outcomes are logged.</p>
-        <p><a href="https://github.com" target="_blank">View Full Source Code on GitHub &rarr;</a></p>
-    </div>
+	</body>
+</html>
